@@ -1,0 +1,8 @@
+{
+            module: 'MMM-quotes',
+            position: 'top_center',
+            config: {
+                updateInterval: 10 * 1000, // update interval in milliseconds
+                fadeSpeed: 2000
+            }
+        }
