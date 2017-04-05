@@ -19,16 +19,15 @@ Module.register("MMM-quotes", {
 
   getDom: function() {
     var wrapper = document.createElement("ticker");
-    wrapper.className = 'medium bright';
-    wrapper.className = 'ticker';
+    wrapper.className = 'medium bright ticker';
 
     var data = this.result;
     var quote = data.quote;
     if (quote) {
- 
-      var priceElement = document.createElement("span");
-      priceElement.innerHTML = quote;
-      wrapper.appendChild(priceElement);
+
+      var element = document.createElement("span");
+      element.innerHTML = quote;
+      wrapper.appendChild(element);
     }
     return wrapper;
   },
@@ -53,7 +52,7 @@ Module.register("MMM-quotes", {
   socketNotificationReceived: function(notification, quote) {
     if (notification === "Quote") {
       this.result = quote;
-      this.updateDom(self.config.fadeSpeed);
+      this.updateDom(this.config.fadeSpeed);
     }
   }
 
